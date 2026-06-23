@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "master" ]
   workflow_dispatch:
 
 permissions:
@@ -17,20 +17,28 @@ concurrency:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
       - name: Setup Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: 'stable'
-          channel: 'stable'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y curl unzip
+          git clone https://github.com/flutter/flutter.git -b stable --depth 1
+          echo "$GITHUB_WORKSPACE/flutter/bin" >> $GITHUB_PATH
+        shell: bash
 
       - name: Get dependencies
-        run: flutter pub get
+        run: |
+          flutter pub get
+          flutter doctor
+        shell: bash
 
       - name: Build web
-        run: flutter build web --base-href "/${{ github.event.repository.name }}/" --release
+        run: |
+          flutter build web --base-href "/${{ github.event.repository.name }}/" --release
+        shell: bash
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
