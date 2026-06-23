@@ -6,13 +6,9 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
 
 jobs:
   build-and-deploy:
@@ -30,9 +26,7 @@ jobs:
         shell: bash
 
       - name: Get dependencies
-        run: |
-          flutter pub get
-          flutter doctor
+        run: flutter pub get
         shell: bash
 
       - name: Build web
@@ -40,14 +34,13 @@ jobs:
           flutter build web --base-href "/${{ github.event.repository.name }}/" --release
         shell: bash
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: 'build/web'
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Deploy to gh-pages branch
+        run: |
+          cd build/web
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Deploy to GitHub Pages"
+          git push --force origin HEAD:gh-pages
+        shell: bash
