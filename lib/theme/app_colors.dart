@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static Color get basicText => const Color(0xFF646464);
+  static Color get lightText => const Color(0xFFe8e2de);
 
-  static Color get titleText => const Color(0xFF000000);
+  static Color get middleDartText => const Color(0xFF646464);
+
+  static Color get darkText => const Color(0xFF000000);
 
   static Color get primaryColor => const Color(0xFFfefefe);
 

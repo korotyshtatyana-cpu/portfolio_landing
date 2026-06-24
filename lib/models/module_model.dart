@@ -6,7 +6,7 @@ class ModuleModel {
   final String menuName;
   final Color backgroundColor;
   final Color textColor;
-  final Color titleColor;
+  final Color accentColor;
   final String backgroundImage;
   final ModuleOrientationEnum moduleOrientationEnum;
   final String title;
@@ -18,7 +18,7 @@ class ModuleModel {
     required this.menuName,
     required this.backgroundColor,
     required this.textColor,
-    required this.titleColor,
+    required this.accentColor,
     required this.backgroundImage,
     required this.moduleOrientationEnum,
     required this.title,

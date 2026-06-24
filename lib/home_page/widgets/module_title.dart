@@ -9,14 +9,14 @@ class ModuleTitle extends StatelessWidget {
   final Color color;
   final String text;
 
-  const ModuleTitle({super.key, required this.color, required this.text});
+  const ModuleTitle({super.key, required this.color, required this.text,});
 
   @override
   Widget build(BuildContext context) {
     return AutoSizeText(
       text,
       style: AppTextStyle.title.copyWith(
-        color: AppColors.basicText,
+        color: color,
         fontWeight: FontWeight.w200,
         fontSize: 40,
       ),

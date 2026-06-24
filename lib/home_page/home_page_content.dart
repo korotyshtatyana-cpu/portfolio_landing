@@ -102,17 +102,17 @@ class _HomePageContentState extends State<HomePageContent>
 
     return Scaffold(
       body: Stack(
-        children: [
+        children: <Widget>[
           ListView(
             controller: _scrollController,
-            children: [
+            children: <Widget>[
               WelcomeModule(
                 backgroundColor: modulesData.first.backgroundColor,
                 backgroundImage: modulesData.first.backgroundImage,
                 textColor: modulesData.first.textColor,
-                titleColor: modulesData.first.titleColor,
+                accentColor: modulesData.first.accentColor,
               ),
-              ...modulesData.getRange(1, modulesData.length - 1).map((
+              ...modulesData.getRange(1, modulesData.length).map((
                 ModuleModel model,
               ) {
                 return ModuleLayout(
@@ -120,8 +120,8 @@ class _HomePageContentState extends State<HomePageContent>
                   backgroundImage: model.backgroundImage,
                   moduleOrientationEnum: model.moduleOrientationEnum,
                   child: ModuleContent(
-                    titleColor: model.titleColor,
-                    mainColor: model.textColor,
+                    textColor: model.textColor,
+                    accentColor: model.accentColor,
                     moduleOrientationEnum: model.moduleOrientationEnum,
                     moreFunction: model.moreFunction,
                     downloadFunction: model.downloadFunction,
@@ -145,8 +145,7 @@ class _HomePageContentState extends State<HomePageContent>
             offset: Offset(slideOffset, 0),
             child: Row(
               mainAxisSize: MainAxisSize.min,
-              children: [
-                // Меню
+              children: <Widget>[
                 Container(
                   width: 250,
                   height: double.infinity,
@@ -185,7 +184,7 @@ class _HomePageContentState extends State<HomePageContent>
                                         style: TextStyle(
                                           fontSize: 16,
                                           fontWeight: FontWeight.w300,
-                                          color: AppColors.basicText,
+                                          color: AppColors.middleDartText,
                                         ),
                                       ),
                                     ),

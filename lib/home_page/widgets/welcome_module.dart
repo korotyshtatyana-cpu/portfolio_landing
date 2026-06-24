@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:flutter/material.dart';
 
 import '../../data/constants.dart';
 import '../../theme/app_text_style.dart';
@@ -8,14 +8,14 @@ import 'about_me_text.dart';
 class WelcomeModule extends StatelessWidget {
   final Color backgroundColor;
   final Color textColor;
-  final Color titleColor;
+  final Color accentColor;
   final String backgroundImage;
 
   const WelcomeModule({
     super.key,
     required this.backgroundColor,
     required this.textColor,
-    required this.titleColor,
+    required this.accentColor,
     required this.backgroundImage,
   });
 
@@ -31,21 +31,21 @@ class WelcomeModule extends StatelessWidget {
           image: DecorationImage(
             image: AssetImage(backgroundImage),
             fit: BoxFit.fitHeight,
-            alignment: AlignmentDirectional(-1, 0),
+            alignment: AlignmentDirectional.centerStart,
           ),
         ),
         child: Padding(
-          padding: EdgeInsets.only(top: 32),
+          padding: const EdgeInsets.only(top: 32),
           child: Column(
             children: [
               Row(
-                children: [
+                children: <Widget>[
                   SizedBox(width: screenWidth * 0.07),
                   Expanded(
                     child: AutoSizeText(
                       'Почему я выбираю',
                       style: AppTextStyle.title.copyWith(
-                        color: textColor,
+                        color: accentColor,
                         fontWeight: FontWeight.w200,
                         fontSize: 300,
                         height: 0.8,
@@ -59,13 +59,13 @@ class WelcomeModule extends StatelessWidget {
               ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
+                children: <Widget>[
                   SizedBox(width: screenWidth * 0.4),
                   Expanded(
                     child: AutoSizeText(
                       'инженерную',
                       style: AppTextStyle.title.copyWith(
-                        color: textColor,
+                        color: accentColor,
                         fontWeight: FontWeight.w400,
                         fontSize: 300,
                         height: 0.8,
@@ -78,13 +78,13 @@ class WelcomeModule extends StatelessWidget {
                 ],
               ),
               Row(
-                children: [
+                children: <Widget>[
                   SizedBox(width: screenWidth * 0.3),
                   Expanded(
                     child: AutoSizeText(
                       'профессию',
                       style: AppTextStyle.title.copyWith(
-                        color: textColor,
+                        color: accentColor,
                         fontWeight: FontWeight.w200,
                         fontSize: 300,
                         height: 0.8,
@@ -96,14 +96,14 @@ class WelcomeModule extends StatelessWidget {
                   SizedBox(width: screenWidth * 0.1),
                 ],
               ),
-              Spacer(),
+              const Spacer(),
               Row(
-                children: [
+                children: <Widget>[
                   SizedBox(width: screenWidth * 0.4),
                   Expanded(
                     child: AboutMe(
-                      baseColor: titleColor,
-                      highlightColor: textColor,
+                      baseColor: textColor,
+                      highlightColor: accentColor,
                     ),
                   ),
                   SizedBox(width: screenWidth * 0.1),

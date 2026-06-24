@@ -7,8 +7,8 @@ import '../../theme/app_colors.dart';
 import 'app_button.dart';
 
 class ModuleContent extends StatelessWidget {
-  final Color titleColor;
-  final Color mainColor;
+  final Color textColor;
+  final Color accentColor;
   final ModuleOrientationEnum moduleOrientationEnum;
   final Function() moreFunction;
   final Function() downloadFunction;
@@ -22,8 +22,8 @@ class ModuleContent extends StatelessWidget {
     required this.downloadFunction,
     required this.title,
     required this.projectName,
-    required this.titleColor,
-    required this.mainColor,
+    required this.textColor,
+    required this.accentColor,
   });
 
   @override
@@ -34,11 +34,11 @@ class ModuleContent extends StatelessWidget {
           : CrossAxisAlignment.end,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        ModuleTitle(color: titleColor, text: title),
-        SizedBox(height: 16),
+        ModuleTitle(color: textColor, text: title),
+        const SizedBox(height: 16),
         ModuleBasicText(
           moduleOrientationEnum: moduleOrientationEnum,
-          color: mainColor,
+          color: accentColor,
           text: projectName,
         ),
         SizedBox(height: 64),
@@ -48,11 +48,11 @@ class ModuleContent extends StatelessWidget {
               ? MainAxisAlignment.start
               : MainAxisAlignment.end,
           children: [
-            AppButton(text: 'Подробнее', color: mainColor, onTap: moreFunction),
+            AppButton(text: 'Подробнее', color: accentColor, onTap: moreFunction),
             SizedBox(width: 64),
             AppButton(
               text: 'Скачать',
-              color: mainColor,
+              color: accentColor,
               icon: Icons.file_download,
               onTap: downloadFunction,
             ),
