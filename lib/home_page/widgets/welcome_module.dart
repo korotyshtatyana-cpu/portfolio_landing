@@ -1,26 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
-import '../../theme/app_colors.dart';
+import '../../data/constants.dart';
 import '../../theme/app_text_style.dart';
 import 'about_me_text.dart';
 
-class Module1 extends StatelessWidget {
+class WelcomeModule extends StatelessWidget {
   final Color backgroundColor;
-
+  final Color textColor;
+  final Color titleColor;
   final String backgroundImage;
 
-  const Module1({
+  const WelcomeModule({
     super.key,
     required this.backgroundColor,
+    required this.textColor,
+    required this.titleColor,
     required this.backgroundImage,
   });
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    final double screenWidth = MediaQuery.of(context).size.width;
+
     return SizedBox(
-      height: 700,
+      height: moduleHeight,
       child: Container(
         decoration: BoxDecoration(
           color: backgroundColor,
@@ -41,7 +45,7 @@ class Module1 extends StatelessWidget {
                     child: AutoSizeText(
                       'Почему я выбираю',
                       style: AppTextStyle.title.copyWith(
-                        color: AppColors.darkGreen,
+                        color: textColor,
                         fontWeight: FontWeight.w200,
                         fontSize: 300,
                         height: 0.8,
@@ -61,7 +65,7 @@ class Module1 extends StatelessWidget {
                     child: AutoSizeText(
                       'инженерную',
                       style: AppTextStyle.title.copyWith(
-                        color: AppColors.darkGreen,
+                        color: textColor,
                         fontWeight: FontWeight.w400,
                         fontSize: 300,
                         height: 0.8,
@@ -80,7 +84,7 @@ class Module1 extends StatelessWidget {
                     child: AutoSizeText(
                       'профессию',
                       style: AppTextStyle.title.copyWith(
-                        color: AppColors.darkGreen,
+                        color: textColor,
                         fontWeight: FontWeight.w200,
                         fontSize: 300,
                         height: 0.8,
@@ -96,7 +100,12 @@ class Module1 extends StatelessWidget {
               Row(
                 children: [
                   SizedBox(width: screenWidth * 0.4),
-                  Expanded(child: const AboutMe()),
+                  Expanded(
+                    child: AboutMe(
+                      baseColor: titleColor,
+                      highlightColor: textColor,
+                    ),
+                  ),
                   SizedBox(width: screenWidth * 0.1),
                 ],
               ),

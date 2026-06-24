@@ -3,7 +3,14 @@ import '../../theme/app_colors.dart';
 import '../../theme/app_text_style.dart';
 
 class AboutMe extends StatelessWidget {
-  const AboutMe({super.key});
+  final Color baseColor;
+  final Color highlightColor;
+
+  const AboutMe({
+    super.key,
+    required this.baseColor,
+    required this.highlightColor,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +32,7 @@ class AboutMe extends StatelessWidget {
     return RichText(
       text: TextSpan(
         style: AppTextStyle.basic.copyWith(
-          color: AppColors.basicText,
+          color: baseColor,
           fontSize: baseSize,
           fontWeight: FontWeight.w400,
           height: 1.6,
@@ -37,29 +44,31 @@ class AboutMe extends StatelessWidget {
           TextSpan(
             text: 'сама создавать то, чем мир будет пользоваться завтра. ',
             style: AppTextStyle.basic.copyWith(
-              color: AppColors.darkGreen,
+              color: highlightColor,
               fontWeight: FontWeight.w400,
               fontSize: highlightedSize,
             ),
           ),
           TextSpan(
-            text: 'Настоящая инженерия для меня — это искусство, где нужны не только расчёты, но и чувство гармонии. Я хочу быть инженером-созидателем, который видит плоды своего труда и переходит от слов к делу. ',
+            text:
+                'Настоящая инженерия для меня — это искусство, где нужны не только расчёты, но и чувство гармонии. Я хочу быть инженером-созидателем, который видит плоды своего труда и переходит от слов к делу. ',
           ),
           TextSpan(
             text: '\nМоя мечта',
             style: AppTextStyle.basic.copyWith(
-              color: AppColors.darkGreen,
+              color: highlightColor,
               fontWeight: FontWeight.w400,
               fontSize: highlightedSize,
             ),
           ),
           TextSpan(
-            text: ' — однажды сказать: «В этой системе, помогающей людям, есть ',
+            text:
+                ' — однажды сказать: «В этой системе, помогающей людям, есть ',
           ),
           TextSpan(
             text: 'частичка моей мысли',
             style: AppTextStyle.basic.copyWith(
-              color: AppColors.darkGreen,
+              color: highlightColor,
               fontWeight: FontWeight.w400,
               fontSize: highlightedSize,
             ),

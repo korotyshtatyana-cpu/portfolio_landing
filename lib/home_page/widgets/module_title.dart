@@ -1,21 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:portfolio/home_page/widgets/module_orientation_enum.dart';
+import 'package:portfolio/models/module_orientation_enum.dart';
 
 import '../../theme/app_colors.dart';
 import '../../theme/app_text_style.dart';
 
 class ModuleTitle extends StatelessWidget {
-  final ModuleOrientationEnum moduleOrientationEnum;
   final Color color;
   final String text;
 
-  const ModuleTitle({
-    super.key,
-    required this.moduleOrientationEnum,
-    required this.color,
-    required this.text,
-  });
+  const ModuleTitle({super.key, required this.color, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -29,9 +23,6 @@ class ModuleTitle extends StatelessWidget {
       maxLines: 1,
       minFontSize: 16,
       stepGranularity: 1,
-      textAlign: moduleOrientationEnum == ModuleOrientationEnum.right
-          ? TextAlign.start
-          : TextAlign.end,
     );
   }
 }

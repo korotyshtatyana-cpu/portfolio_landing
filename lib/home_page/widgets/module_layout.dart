@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'module_orientation_enum.dart';
+import '../../data/constants.dart';
+import '../../models/module_orientation_enum.dart';
 
 class ModuleLayout extends StatelessWidget {
   final ModuleOrientationEnum moduleOrientationEnum;
@@ -19,7 +20,7 @@ class ModuleLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 700,
+      height: moduleHeight,
       child: Container(
         decoration: BoxDecoration(
           color: backgroundColor,
