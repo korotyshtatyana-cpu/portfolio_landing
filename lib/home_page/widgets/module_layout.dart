@@ -28,8 +28,8 @@ class ModuleLayout extends StatelessWidget {
             image: AssetImage(backgroundImage),
             fit: BoxFit.fitHeight,
             alignment: moduleOrientationEnum == ModuleOrientationEnum.right
-                ? AlignmentDirectional(1, 0)
-                : AlignmentDirectional(-1, 0),
+                ? AlignmentDirectional.centerEnd
+                : AlignmentDirectional.centerStart,
           ),
         ),
         child: Padding(

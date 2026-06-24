@@ -1,8 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:portfolio/models/module_orientation_enum.dart';
+import 'package:flutter/material.dart';
 
-import '../../theme/app_colors.dart';
 import '../../theme/app_text_style.dart';
 
 class ModuleTitle extends StatelessWidget {
@@ -22,7 +20,6 @@ class ModuleTitle extends StatelessWidget {
       ),
       maxLines: 1,
       minFontSize: 16,
-      stepGranularity: 1,
     );
   }
 }

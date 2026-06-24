@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../theme/app_colors.dart';
 import '../../theme/app_text_style.dart';
 
 class AboutMe extends StatelessWidget {
@@ -37,8 +36,8 @@ class AboutMe extends StatelessWidget {
           fontWeight: FontWeight.w400,
           height: 1.6,
         ),
-        children: [
-          TextSpan(
+        children: <TextSpan>[
+          const TextSpan(
             text: 'потому что хочу не просто пользоваться технологиями, а ',
           ),
           TextSpan(
@@ -49,7 +48,7 @@ class AboutMe extends StatelessWidget {
               fontSize: highlightedSize,
             ),
           ),
-          TextSpan(
+          const TextSpan(
             text:
                 'Настоящая инженерия для меня — это искусство, где нужны не только расчёты, но и чувство гармонии. Я хочу быть инженером-созидателем, который видит плоды своего труда и переходит от слов к делу. ',
           ),
@@ -61,7 +60,7 @@ class AboutMe extends StatelessWidget {
               fontSize: highlightedSize,
             ),
           ),
-          TextSpan(
+          const TextSpan(
             text:
                 ' — однажды сказать: «В этой системе, помогающей людям, есть ',
           ),
@@ -73,11 +72,9 @@ class AboutMe extends StatelessWidget {
               fontSize: highlightedSize,
             ),
           ),
-          TextSpan(text: '».'),
+          const TextSpan(text: '».'),
         ],
       ),
-      softWrap: true,
-      textAlign: TextAlign.start,
     );
   }
 }

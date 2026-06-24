@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/home_page/widgets/module_basic_text.dart';
-import 'package:portfolio/models/module_orientation_enum.dart';
-import 'package:portfolio/home_page/widgets/module_title.dart';
 
-import '../../theme/app_colors.dart';
+import '../../models/module_orientation_enum.dart';
 import 'app_button.dart';
+import 'module_basic_text.dart';
+import 'module_title.dart';
 
 class ModuleContent extends StatelessWidget {
   final Color textColor;
@@ -33,7 +32,7 @@ class ModuleContent extends StatelessWidget {
           ? CrossAxisAlignment.start
           : CrossAxisAlignment.end,
       mainAxisAlignment: MainAxisAlignment.center,
-      children: [
+      children: <Widget>[
         ModuleTitle(color: textColor, text: title),
         const SizedBox(height: 16),
         ModuleBasicText(
@@ -41,15 +40,19 @@ class ModuleContent extends StatelessWidget {
           color: accentColor,
           text: projectName,
         ),
-        SizedBox(height: 64),
+        const SizedBox(height: 64),
         Row(
           mainAxisAlignment:
               moduleOrientationEnum == ModuleOrientationEnum.right
               ? MainAxisAlignment.start
               : MainAxisAlignment.end,
-          children: [
-            AppButton(text: 'Подробнее', color: accentColor, onTap: moreFunction),
-            SizedBox(width: 64),
+          children: <Widget>[
+            AppButton(
+              text: 'Подробнее',
+              color: accentColor,
+              onTap: moreFunction,
+            ),
+            const SizedBox(width: 64),
             AppButton(
               text: 'Скачать',
               color: accentColor,

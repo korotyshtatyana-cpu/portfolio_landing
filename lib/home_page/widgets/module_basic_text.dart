@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:portfolio/models/module_orientation_enum.dart';
+import 'package:flutter/material.dart';
 
+import '../../models/module_orientation_enum.dart';
 import '../../theme/app_text_style.dart';
 
 class ModuleBasicText extends StatelessWidget {
@@ -28,7 +28,6 @@ class ModuleBasicText extends StatelessWidget {
       ),
       maxLines: 2,
       minFontSize: 20,
-      stepGranularity: 1,
       textAlign: moduleOrientationEnum == ModuleOrientationEnum.right
           ? TextAlign.start
           : TextAlign.end,

@@ -21,16 +21,16 @@ class AppButton extends StatelessWidget {
     return GestureDetector(
       onDoubleTap: onTap(),
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           border: Border.all(width: 2, color: color),
         ),
         child: Row(
-          children: [
+          children: <Widget>[
             if (icon != null) ...<Widget>{
               Icon(Icons.file_download, color: color),
-              SizedBox(width: 8),
+              const SizedBox(width: 8),
             },
             Text(
               text,

@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/home_page/widgets/module_layout.dart';
-import 'package:portfolio/models/module_model.dart';
+
 import '../data/constants.dart';
 import '../data/modules_data.dart';
-import '../theme/app_images.dart';
-
-import '../models/module_orientation_enum.dart';
+import '../models/module_model.dart';
 import '../theme/app_colors.dart';
 import 'widgets/module_content.dart';
+import 'widgets/module_layout.dart';
 import 'widgets/welcome_module.dart';
 
 class HomePageContent extends StatefulWidget {
@@ -137,7 +135,7 @@ class _HomePageContentState extends State<HomePageContent>
             Positioned.fill(
               child: GestureDetector(
                 onTap: _toggleMenu,
-                child: Container(color: Colors.black.withOpacity(0.3)),
+                child: Container(color: Colors.black.withValues(alpha: 0.3)),
               ),
             ),
 
@@ -151,16 +149,16 @@ class _HomePageContentState extends State<HomePageContent>
                   height: double.infinity,
                   color: Colors.white,
                   child: Column(
-                    children: [
+                    children: <Widget>[
                       const SizedBox(height: 16),
                       Expanded(
                         child: ListView.builder(
                           padding: const EdgeInsets.symmetric(horizontal: 16),
                           itemCount: modulesData.length,
-                          itemBuilder: (context, index) {
-                            final model = modulesData[index];
-                            final isCurrent = _currentModuleIndex == index;
-                            final color = model.backgroundColor;
+                          itemBuilder: (BuildContext context, int index) {
+                            final ModuleModel model = modulesData[index];
+                            final bool isCurrent = _currentModuleIndex == index;
+                            final Color color = model.backgroundColor;
 
                             return GestureDetector(
                               onTap: () => _scrollToModule(index),
@@ -172,12 +170,12 @@ class _HomePageContentState extends State<HomePageContent>
                                 ),
                                 decoration: BoxDecoration(
                                   color: isCurrent
-                                      ? color.withOpacity(0.15)
+                                      ? color.withValues(alpha: 0.15)
                                       : Colors.transparent,
                                   borderRadius: BorderRadius.circular(12),
                                 ),
                                 child: Row(
-                                  children: [
+                                  children: <Widget>[
                                     Expanded(
                                       child: Text(
                                         model.menuName,

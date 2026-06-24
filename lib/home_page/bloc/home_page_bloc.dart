@@ -1,11 +1,11 @@
 import 'dart:async';
-import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:equatable/equatable.dart';
 import 'package:flutter/widgets.dart';
-
-part 'home_page_event.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'hame_page_state.dart';
+part 'home_page_event.dart';
 
 class HomePageBloc extends Bloc<HomePageEvent, HomePageState>
     with WidgetsBindingObserver {

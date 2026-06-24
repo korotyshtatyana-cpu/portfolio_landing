@@ -37,7 +37,7 @@ class WelcomeModule extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.only(top: 32),
           child: Column(
-            children: [
+            children: <Widget>[
               Row(
                 children: <Widget>[
                   SizedBox(width: screenWidth * 0.07),
@@ -51,7 +51,6 @@ class WelcomeModule extends StatelessWidget {
                         height: 0.8,
                       ),
                       maxLines: 1,
-                      stepGranularity: 1,
                     ),
                   ),
                   SizedBox(width: screenWidth * 0.15),
@@ -71,7 +70,6 @@ class WelcomeModule extends StatelessWidget {
                         height: 0.8,
                       ),
                       maxLines: 1,
-                      stepGranularity: 1,
                     ),
                   ),
                   SizedBox(width: screenWidth * 0.05),
@@ -90,7 +88,6 @@ class WelcomeModule extends StatelessWidget {
                         height: 0.8,
                       ),
                       maxLines: 1,
-                      stepGranularity: 1,
                     ),
                   ),
                   SizedBox(width: screenWidth * 0.1),
@@ -109,7 +106,7 @@ class WelcomeModule extends StatelessWidget {
                   SizedBox(width: screenWidth * 0.1),
                 ],
               ),
-              Spacer(),
+              const Spacer(),
             ],
           ),
         ),
