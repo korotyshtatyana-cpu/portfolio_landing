@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 
+import 'module_details_type.dart';
 import 'module_orientation_enum.dart';
 
 class ModuleModel {
@@ -11,7 +12,7 @@ class ModuleModel {
   final ModuleOrientationEnum moduleOrientationEnum;
   final String title;
   final String projectName;
-  final Function() moreFunction;
+  final ModuleDetailsModel moduleDetailsModel;
   final Function() downloadFunction;
 
   ModuleModel({
@@ -23,7 +24,7 @@ class ModuleModel {
     required this.moduleOrientationEnum,
     required this.title,
     required this.projectName,
-    required this.moreFunction,
+    required this.moduleDetailsModel,
     required this.downloadFunction,
   });
 }

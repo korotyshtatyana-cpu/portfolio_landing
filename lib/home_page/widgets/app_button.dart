@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../theme/app_text_style.dart';
 
 class AppButton extends StatelessWidget {
-  final Function onTap;
+  final Function() onTap;
   final Color color;
   final String text;
   final IconData? icon;
@@ -19,7 +19,7 @@ class AppButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onDoubleTap: onTap(),
+      onTap: onTap,
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         decoration: BoxDecoration(
@@ -27,6 +27,8 @@ class AppButton extends StatelessWidget {
           border: Border.all(width: 2, color: color),
         ),
         child: Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             if (icon != null) ...<Widget>{
               Icon(Icons.file_download, color: color),
@@ -39,6 +41,7 @@ class AppButton extends StatelessWidget {
                 fontWeight: FontWeight.w600,
                 fontSize: 16,
               ),
+              textAlign: TextAlign.center,
             ),
           ],
         ),

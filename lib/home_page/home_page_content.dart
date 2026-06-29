@@ -121,7 +121,7 @@ class _HomePageContentState extends State<HomePageContent>
                     textColor: model.textColor,
                     accentColor: model.accentColor,
                     moduleOrientationEnum: model.moduleOrientationEnum,
-                    moreFunction: model.moreFunction,
+                    moduleDetailsModel: model.moduleDetailsModel,
                     downloadFunction: model.downloadFunction,
                     title: model.title,
                     projectName: model.projectName,

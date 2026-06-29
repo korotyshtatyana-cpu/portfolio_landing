@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 
+import '../../models/module_details_type.dart';
 import '../../models/module_orientation_enum.dart';
 import 'app_button.dart';
 import 'module_basic_text.dart';
+import 'module_details/see_more_modal.dart';
 import 'module_title.dart';
 
 class ModuleContent extends StatelessWidget {
   final Color textColor;
   final Color accentColor;
   final ModuleOrientationEnum moduleOrientationEnum;
-  final Function() moreFunction;
+  final ModuleDetailsModel moduleDetailsModel;
   final Function() downloadFunction;
   final String title;
   final String projectName;
@@ -17,7 +19,7 @@ class ModuleContent extends StatelessWidget {
   const ModuleContent({
     super.key,
     required this.moduleOrientationEnum,
-    required this.moreFunction,
+    required this.moduleDetailsModel,
     required this.downloadFunction,
     required this.title,
     required this.projectName,
@@ -41,27 +43,69 @@ class ModuleContent extends StatelessWidget {
           text: projectName,
         ),
         const SizedBox(height: 64),
-        Row(
-          mainAxisAlignment:
-              moduleOrientationEnum == ModuleOrientationEnum.right
-              ? MainAxisAlignment.start
-              : MainAxisAlignment.end,
-          children: <Widget>[
-            AppButton(
-              text: 'Подробнее',
-              color: accentColor,
-              onTap: moreFunction,
-            ),
-            const SizedBox(width: 64),
-            AppButton(
-              text: 'Скачать',
-              color: accentColor,
-              icon: Icons.file_download,
-              onTap: downloadFunction,
-            ),
+        Wrap(
+          crossAxisAlignment: moduleOrientationEnum == ModuleOrientationEnum.right
+              ? WrapCrossAlignment.start
+              : WrapCrossAlignment.end,
+          spacing: 16,
+          runSpacing: 16,
+          children: [
+          AppButton(
+                text: 'Подробнее',
+                color: accentColor,
+                onTap: () {
+                  _showDetailModal(context, moduleDetailsModel);
+                },
+              ),
+              // const SizedBox(width: 64),
+              AppButton(
+                text: 'Скачать',
+                color: accentColor,
+                icon: Icons.file_download,
+                onTap: downloadFunction,
+              ),
           ],
         ),
+        // Row(
+        //   mainAxisAlignment:
+        //       moduleOrientationEnum == ModuleOrientationEnum.right
+        //       ? MainAxisAlignment.start
+        //       : MainAxisAlignment.end,
+        //   children: <Widget>[
+        //     AppButton(
+        //       text: 'Подробнее',
+        //       color: accentColor,
+        //       onTap: () {
+        //         _showDetailModal(context, moduleDetailsModel);
+        //       },
+        //     ),
+        //     const SizedBox(width: 64),
+        //     AppButton(
+        //       text: 'Скачать',
+        //       color: accentColor,
+        //       icon: Icons.file_download,
+        //       onTap: downloadFunction,
+        //     ),
+        //   ],
+        // ),
       ],
+    );
+  }
+
+  void _showDetailModal(
+    BuildContext context,
+    ModuleDetailsModel moduleDetailsModel,
+  ) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) => SeeMoreModal(
+        moduleDetailsModel: moduleDetailsModel,
+        title: projectName,
+        content:
+            'Здесь будет подробное описание проекта "$projectName". '
+            'Вы можете добавить сюда любую информацию: '
+            'цели, задачи, используемые технологии, результаты и т.д.',
+      ),
     );
   }
 }

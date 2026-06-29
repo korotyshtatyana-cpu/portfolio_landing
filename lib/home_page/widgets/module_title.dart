@@ -19,7 +19,6 @@ class ModuleTitle extends StatelessWidget {
         fontSize: 40,
       ),
       maxLines: 1,
-      minFontSize: 16,
     );
   }
 }

@@ -26,8 +26,7 @@ class ModuleBasicText extends StatelessWidget {
         fontSize: 70,
         height: 0.8,
       ),
-      maxLines: 2,
-      minFontSize: 20,
+      maxLines: 4,
       textAlign: moduleOrientationEnum == ModuleOrientationEnum.right
           ? TextAlign.start
           : TextAlign.end,
