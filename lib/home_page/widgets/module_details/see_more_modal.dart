@@ -59,8 +59,6 @@ class SeeMoreModal extends StatelessWidget {
                       images:
                           moduleDetailsModel.presentationImages ?? <String>[],
                     )
-                  : (moduleDetailsModel.text != null)
-                  ? Text('text mode')
                   : (moduleDetailsModel.image != null)
                   ? Text('image mode')
                   : Text('no content'),

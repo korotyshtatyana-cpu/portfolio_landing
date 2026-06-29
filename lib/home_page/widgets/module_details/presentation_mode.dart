@@ -5,17 +5,7 @@ import '../../../theme/app_colors.dart';
 class PresentationMode extends StatefulWidget {
   final List<String> images;
 
-  // final double height;
-  // final bool showIndicators;
-  // final Duration autoPlayDuration;
-
-  const PresentationMode({
-    super.key,
-    required this.images,
-    // this.height = 400,
-    // this.showIndicators = true,
-    // this.autoPlayDuration = const Duration(seconds: 3),
-  });
+  const PresentationMode({super.key, required this.images});
 
   @override
   State<PresentationMode> createState() => _PresentationModeState();
@@ -29,24 +19,7 @@ class _PresentationModeState extends State<PresentationMode> {
   void initState() {
     super.initState();
     _pageController = PageController(initialPage: 0);
-
-    // // ✅ Автопрокрутка
-    // if (widget.autoPlayDuration.inSeconds > 0) {
-    //   Future.delayed(widget.autoPlayDuration, _autoPlay);
-    // }
   }
-
-  // void _autoPlay() {
-  //   if (_pageController.hasClients) {
-  //     final int nextPage = (_currentPage + 1) % widget.pages.length;
-  //     _pageController.animateToPage(
-  //       nextPage,
-  //       duration: const Duration(milliseconds: 500),
-  //       curve: Curves.easeInOut,
-  //     );
-  //     Future.delayed(widget.autoPlayDuration, _autoPlay);
-  //   }
-  // }
 
   @override
   void dispose() {

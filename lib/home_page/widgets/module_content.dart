@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:html' as html;
 
 import '../../models/module_details_type.dart';
 import '../../models/module_orientation_enum.dart';
@@ -44,50 +45,33 @@ class ModuleContent extends StatelessWidget {
         ),
         const SizedBox(height: 64),
         Wrap(
-          crossAxisAlignment: moduleOrientationEnum == ModuleOrientationEnum.right
+          crossAxisAlignment:
+              moduleOrientationEnum == ModuleOrientationEnum.right
               ? WrapCrossAlignment.start
               : WrapCrossAlignment.end,
           spacing: 16,
           runSpacing: 16,
           children: [
-          AppButton(
-                text: 'Подробнее',
-                color: accentColor,
-                onTap: () {
+            AppButton(
+              text: 'Подробнее',
+              color: accentColor,
+              onTap: () {
+                if (moduleDetailsModel.appFile != null) {
+                  _openInGoogleDocs(moduleDetailsModel.appFile ?? '');
+                } else {
                   _showDetailModal(context, moduleDetailsModel);
-                },
-              ),
-              // const SizedBox(width: 64),
-              AppButton(
-                text: 'Скачать',
-                color: accentColor,
-                icon: Icons.file_download,
-                onTap: downloadFunction,
-              ),
+                }
+              },
+            ),
+            // const SizedBox(width: 64),
+            AppButton(
+              text: 'Скачать',
+              color: accentColor,
+              icon: Icons.file_download,
+              onTap: downloadFunction,
+            ),
           ],
         ),
-        // Row(
-        //   mainAxisAlignment:
-        //       moduleOrientationEnum == ModuleOrientationEnum.right
-        //       ? MainAxisAlignment.start
-        //       : MainAxisAlignment.end,
-        //   children: <Widget>[
-        //     AppButton(
-        //       text: 'Подробнее',
-        //       color: accentColor,
-        //       onTap: () {
-        //         _showDetailModal(context, moduleDetailsModel);
-        //       },
-        //     ),
-        //     const SizedBox(width: 64),
-        //     AppButton(
-        //       text: 'Скачать',
-        //       color: accentColor,
-        //       icon: Icons.file_download,
-        //       onTap: downloadFunction,
-        //     ),
-        //   ],
-        // ),
       ],
     );
   }
@@ -107,5 +91,35 @@ class ModuleContent extends StatelessWidget {
             'цели, задачи, используемые технологии, результаты и т.д.',
       ),
     );
+  }
+
+  void _openInGoogleDocs(String filePath) {
+    try {
+      // Для локальных файлов используем относительный путь
+      // Файл должен быть доступен по URL
+
+      // Кодируем URL для Google Docs Viewer
+      final encodedUrl = Uri.encodeComponent(filePath);
+      final viewerUrl =
+          'https://docs.google.com/viewer?url=$encodedUrl&embedded=true';
+
+      // Открываем в новой вкладке
+      html.window.open(viewerUrl, '_blank');
+    } catch (e) {
+      // Если не работает, просто скачиваем
+      _downloadFile(filePath);
+    }
+  }
+
+  void _downloadFile(String filePath) {
+    try {
+      final anchor = html.AnchorElement(href: filePath)
+        ..target = '_blank'
+        ..download = filePath.split('/').last;
+      anchor.click();
+    } catch (e) {
+      // Если не работает, используем window.open
+      html.window.open(filePath, '_blank');
+    }
   }
 }

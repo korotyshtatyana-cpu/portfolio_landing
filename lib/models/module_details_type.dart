@@ -1,25 +1,25 @@
 class ModuleDetailsModel {
   final List<String>? presentationImages;
-  final String? text;
+  final String? appFile;
   final String? image;
 
-  const ModuleDetailsModel({this.text, this.presentationImages, this.image});
+  const ModuleDetailsModel({this.appFile, this.presentationImages, this.image});
 
   const ModuleDetailsModel.presentation({
     required this.presentationImages,
-    this.text,
+    this.appFile,
     this.image,
   });
 
-  const ModuleDetailsModel.text({
+  const ModuleDetailsModel.appFile({
     this.presentationImages,
-    required this.text,
+    required this.appFile,
     this.image,
   });
 
   const ModuleDetailsModel.image({
     this.presentationImages,
-    this.text,
+    this.appFile,
     required this.image,
   });
 }

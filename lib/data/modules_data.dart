@@ -2,6 +2,7 @@ import '../models/module_details_type.dart';
 import '../models/module_model.dart';
 import '../models/module_orientation_enum.dart';
 import '../theme/app_colors.dart';
+import '../theme/app_files.dart';
 import '../theme/app_images.dart';
 
 /// COLOR SCHEME
@@ -32,7 +33,7 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     accentColor: AppColors.pastelGreen,
     backgroundImage: AppImages.mainPhoto,
     moduleOrientationEnum: ModuleOrientationEnum.left,
-    moduleDetailsModel: ModuleDetailsModel.text(text: 'Обо мне'),
+    moduleDetailsModel: ModuleDetailsModel.appFile(appFile: 'Обо мне'),
     downloadFunction: () {},
   ),
   ModuleModel(
@@ -44,7 +45,7 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     moduleOrientationEnum: ModuleOrientationEnum.right,
     title: 'Практическая работа',
     projectName: '«Разработка простейшего роботизированного устройства»',
-    moduleDetailsModel: ModuleDetailsModel.text(text: '«Разработка простейшего роботизированного устройства»'),
+    moduleDetailsModel: ModuleDetailsModel.appFile(appFile: '«Разработка простейшего роботизированного устройства»'),
     downloadFunction: () {},
   ),
   ModuleModel(
@@ -68,7 +69,7 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     moduleOrientationEnum: ModuleOrientationEnum.right,
     title: 'Презентация',
     projectName: '«Содержание деятельности инженера-энергетика»',
-    moduleDetailsModel: ModuleDetailsModel.text(text: '«Содержание деятельности инженера-энергетика»'),
+    moduleDetailsModel: ModuleDetailsModel.appFile(appFile: '«Содержание деятельности инженера-энергетика»'),
     downloadFunction: () {},
   ),
   ModuleModel(
@@ -78,7 +79,7 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     accentColor: AppColors.pastelGreen,
     backgroundImage: AppImages.mainPhoto,
     moduleOrientationEnum: ModuleOrientationEnum.left,
-    moduleDetailsModel: ModuleDetailsModel.text(text: '«MagLog City»: Городская подземная маглев-логистика»'),
+    moduleDetailsModel: ModuleDetailsModel.appFile(appFile: '«MagLog City»: Городская подземная маглев-логистика»'),
     downloadFunction: () {},
     title: 'Проектная работа',
     projectName: '«MagLog City»: Городская подземная маглев-логистика»',
@@ -90,7 +91,7 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     accentColor: AppColors.palePink,
     backgroundImage: AppImages.mainPhoto,
     moduleOrientationEnum: ModuleOrientationEnum.right,
-    moduleDetailsModel: ModuleDetailsModel.text(text: '«Сетевой график строительства одноэтажного жилого дома»'),
+    moduleDetailsModel: ModuleDetailsModel.appFile(appFile: '«Сетевой график строительства одноэтажного жилого дома»'),
     downloadFunction: () {},
     title: 'Проектная работа',
     projectName: '«Сетевой график строительства одноэтажного жилого дома»',
@@ -102,7 +103,7 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     accentColor: AppColors.paleOrange,
     backgroundImage: AppImages.mainPhoto,
     moduleOrientationEnum: ModuleOrientationEnum.left,
-    moduleDetailsModel: ModuleDetailsModel.text(text: '«Этапы проектирования стартапа»'),
+    moduleDetailsModel: ModuleDetailsModel.appFile(appFile: AppFiles.module_7),
     downloadFunction: () {},
     title: 'Проектная работа',
     projectName: '«Этапы проектирования стартапа»',
@@ -114,7 +115,7 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     accentColor: AppColors.darkGreen,
     backgroundImage: AppImages.mainPhoto,
     moduleOrientationEnum: ModuleOrientationEnum.right,
-    moduleDetailsModel: ModuleDetailsModel.text(text: '«Разработка логотипа и элементов фирменного стиля для упаковки»'),
+    moduleDetailsModel: ModuleDetailsModel.appFile(appFile: '«Разработка логотипа и элементов фирменного стиля для упаковки»'),
     downloadFunction: () {},
     title: 'Творческая работа',
     projectName:
@@ -127,7 +128,7 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     accentColor: AppColors.pastelGreen,
     backgroundImage: AppImages.mainPhoto,
     moduleOrientationEnum: ModuleOrientationEnum.left,
-    moduleDetailsModel: ModuleDetailsModel.text(text: '«Этический кодекс инженера: принципы и ответственность»'),
+    moduleDetailsModel: ModuleDetailsModel.appFile(appFile: '«Этический кодекс инженера: принципы и ответственность»'),
     downloadFunction: () {},
     title: 'Реферат',
     projectName: '«Этический кодекс инженера: принципы и ответственность»',
@@ -139,7 +140,7 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     accentColor: AppColors.palePink,
     backgroundImage: AppImages.mainPhoto,
     moduleOrientationEnum: ModuleOrientationEnum.right,
-    moduleDetailsModel: ModuleDetailsModel.text(text: 'Описание принципов работы управляющего контроллера'),
+    moduleDetailsModel: ModuleDetailsModel.appFile(appFile: 'Описание принципов работы управляющего контроллера'),
     downloadFunction: () {},
     title: '',
     projectName: 'Описание принципов работы управляющего контроллера',
@@ -152,7 +153,7 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     accentColor: AppColors.paleOrange,
     backgroundImage: AppImages.mainPhoto,
     moduleOrientationEnum: ModuleOrientationEnum.left,
-    moduleDetailsModel: ModuleDetailsModel.text(text: '«Описание конструкции и принципа действия электродвигателя/трансформатора»'),
+    moduleDetailsModel: ModuleDetailsModel.appFile(appFile: '«Описание конструкции и принципа действия электродвигателя/трансформатора»'),
     downloadFunction: () {},
     title: 'Практическая работа',
     projectName:
@@ -165,7 +166,7 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     accentColor: AppColors.darkGreen,
     backgroundImage: AppImages.mainPhoto,
     moduleOrientationEnum: ModuleOrientationEnum.right,
-    moduleDetailsModel: ModuleDetailsModel.text(text: 'Схема электрической сети'),
+    moduleDetailsModel: ModuleDetailsModel.appFile(appFile: 'Схема электрической сети'),
     downloadFunction: () {},
     title: '',
     projectName: 'Схема электрической сети',
@@ -177,7 +178,7 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     accentColor: AppColors.pastelGreen,
     backgroundImage: AppImages.mainPhoto,
     moduleOrientationEnum: ModuleOrientationEnum.left,
-    moduleDetailsModel: ModuleDetailsModel.text(text: '«Траектории движения на примыкании и пересечении дорог»'),
+    moduleDetailsModel: ModuleDetailsModel.appFile(appFile: '«Траектории движения на примыкании и пересечении дорог»'),
     downloadFunction: () {},
     title: 'Практическая работа',
     projectName: '«Траектории движения на примыкании и пересечении дорог»',
@@ -189,7 +190,7 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     accentColor: AppColors.palePink,
     backgroundImage: AppImages.mainPhoto,
     moduleOrientationEnum: ModuleOrientationEnum.right,
-    moduleDetailsModel: ModuleDetailsModel.text(text: '«Мудборд интерьера»'),
+    moduleDetailsModel: ModuleDetailsModel.appFile(appFile: '«Мудборд интерьера»'),
     downloadFunction: () {},
     title: 'Творческая работа',
     projectName: '«Мудборд интерьера»',
@@ -201,7 +202,7 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     accentColor: AppColors.paleOrange,
     backgroundImage: AppImages.mainPhoto,
     moduleOrientationEnum: ModuleOrientationEnum.left,
-    moduleDetailsModel: ModuleDetailsModel.text(text: '«Коллаж праздничного пространства»'),
+    moduleDetailsModel: ModuleDetailsModel.appFile(appFile: '«Коллаж праздничного пространства»'),
     downloadFunction: () {},
     title: 'Творческая работа',
     projectName: '«Коллаж праздничного пространства»',
