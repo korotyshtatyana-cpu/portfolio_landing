@@ -63,6 +63,7 @@ class _ImageModeState extends State<ImageMode> {
                     child: Text(
                       'Не удалось загрузить изображение',
                       style: TextStyle(color: AppColors.darkGreen),
+                      textAlign: TextAlign.center,
                     ),
                   );
                 },

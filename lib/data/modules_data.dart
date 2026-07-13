@@ -24,6 +24,7 @@ import '../theme/app_images.dart';
 ///  accentColor: AppColors.darkGreen,
 
 final List<ModuleModel> modulesData = <ModuleModel>[
+
   ///About Me
   ModuleModel(
     title: '',
@@ -142,12 +143,12 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     moduleOrientationEnum: ModuleOrientationEnum.right,
     moduleDetailsModel: ModuleDetailsModel.appFile(
       appFile:
-          '«Разработка логотипа и элементов фирменного стиля для упаковки»',
+      '«Разработка логотипа и элементов фирменного стиля для упаковки»',
     ),
     downloadFunction: () {},
     title: 'Творческая работа',
     projectName:
-        '«Разработка логотипа и элементов фирменного стиля для упаковки»',
+    '«Разработка логотипа и элементов фирменного стиля для упаковки»',
   ),
 
   ///Module 9
@@ -174,8 +175,8 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     accentColor: AppColors.palePink,
     backgroundImage: AppImages.mainPhoto,
     moduleOrientationEnum: ModuleOrientationEnum.right,
-    moduleDetailsModel: ModuleDetailsModel.appFile(
-      appFile: 'Описание принципов работы управляющего контроллера',
+    moduleDetailsModel: const ModuleDetailsModel.image(
+      image: AppImages.module_10,
     ),
     downloadFunction: () {},
     title: '',
@@ -185,7 +186,7 @@ final List<ModuleModel> modulesData = <ModuleModel>[
   ///Module 11
   ModuleModel(
     menuName:
-        '«Описание конструкции и принципа действия электродвигателя/трансформатора»',
+    '«Описание конструкции и принципа действия электродвигателя/трансформатора»',
     backgroundColor: AppColors.palePink,
     textColor: AppColors.middleDartText,
     accentColor: AppColors.paleOrange,
@@ -193,12 +194,12 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     moduleOrientationEnum: ModuleOrientationEnum.left,
     moduleDetailsModel: ModuleDetailsModel.appFile(
       appFile:
-          '«Описание конструкции и принципа действия электродвигателя/трансформатора»',
+      '«Описание конструкции и принципа действия электродвигателя/трансформатора»',
     ),
     downloadFunction: () {},
     title: 'Практическая работа',
     projectName:
-        '«Описание конструкции и принципа действия электродвигателя/трансформатора»',
+    '«Описание конструкции и принципа действия электродвигателя/трансформатора»',
   ),
 
   ///Module 12
@@ -268,7 +269,7 @@ final List<ModuleModel> modulesData = <ModuleModel>[
   ///Module 16
   ModuleModel(
     menuName:
-        'Бизнес-план инновационного проекта (текстовый редактор + таблицы)',
+    'Бизнес-план инновационного проекта (текстовый редактор + таблицы)',
     backgroundColor: AppColors.pastelGreen,
     textColor: AppColors.middleDartText,
     accentColor: AppColors.darkGreen,
@@ -283,7 +284,7 @@ final List<ModuleModel> modulesData = <ModuleModel>[
   ///Module 16
   ModuleModel(
     menuName:
-        'Исследовательская работа «Идентификация и фальсификация продовольственных продуктов» (теоретический анализ)',
+    'Исследовательская работа «Идентификация и фальсификация продовольственных продуктов» (теоретический анализ)',
     backgroundColor: AppColors.darkGreen,
     textColor: AppColors.lightText,
     accentColor: AppColors.pastelGreen,
@@ -298,7 +299,7 @@ final List<ModuleModel> modulesData = <ModuleModel>[
   ///Module 17
   ModuleModel(
     menuName:
-        'Практическая работа «Схема взлётно-посадочной полосы» (рисунок с пояснениями)',
+    'Практическая работа «Схема взлётно-посадочной полосы» (рисунок с пояснениями)',
     backgroundColor: AppColors.pastelOrange,
     textColor: AppColors.middleDartText,
     accentColor: AppColors.palePink,
