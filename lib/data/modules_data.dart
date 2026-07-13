@@ -37,6 +37,7 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     moduleDetailsModel: const ModuleDetailsModel.appFile(appFile: 'Обо мне'),
     downloadFunction: () {},
   ),
+
   ///Module 2
   ModuleModel(
     menuName: '«Разработка простейшего роботизированного устройства»',
@@ -47,9 +48,12 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     moduleOrientationEnum: ModuleOrientationEnum.right,
     title: 'Практическая работа',
     projectName: '«Разработка простейшего роботизированного устройства»',
-    moduleDetailsModel: const ModuleDetailsModel.image(image: AppImages.module_2),
+    moduleDetailsModel: const ModuleDetailsModel.image(
+      image: AppImages.module_2,
+    ),
     downloadFunction: () {},
   ),
+
   ///Module 3
   ModuleModel(
     menuName: '«Профессия инженера-конструктора vs инженера-технолога»',
@@ -60,9 +64,12 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     moduleOrientationEnum: ModuleOrientationEnum.left,
     title: 'Презентация',
     projectName: '«Профессия инженера-конструктора vs инженера-технолога»',
-    moduleDetailsModel: const ModuleDetailsModel.presentation(presentationImages: AppImages.module_3),
+    moduleDetailsModel: const ModuleDetailsModel.presentation(
+      presentationImages: AppImages.module_3,
+    ),
     downloadFunction: () {},
   ),
+
   ///Module 4
   ModuleModel(
     menuName: '«Содержание деятельности инженера-энергетика»',
@@ -73,9 +80,12 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     moduleOrientationEnum: ModuleOrientationEnum.right,
     title: 'Презентация',
     projectName: '«Содержание деятельности инженера-энергетика»',
-    moduleDetailsModel: ModuleDetailsModel.appFile(appFile: '«Содержание деятельности инженера-энергетика»'),
+    moduleDetailsModel: const ModuleDetailsModel.presentation(
+      presentationImages: AppImages.module_4,
+    ),
     downloadFunction: () {},
   ),
+
   ///Module 5
   ModuleModel(
     menuName: '«MagLog City»: Городская подземная маглев-логистика»',
@@ -84,11 +94,14 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     accentColor: AppColors.pastelGreen,
     backgroundImage: AppImages.mainPhoto,
     moduleOrientationEnum: ModuleOrientationEnum.left,
-    moduleDetailsModel: ModuleDetailsModel.appFile(appFile: '«MagLog City»: Городская подземная маглев-логистика»'),
+    moduleDetailsModel: ModuleDetailsModel.appFile(
+      appFile: '«MagLog City»: Городская подземная маглев-логистика»',
+    ),
     downloadFunction: () {},
     title: 'Проектная работа',
     projectName: '«MagLog City»: Городская подземная маглев-логистика»',
   ),
+
   ///Module 6
   ModuleModel(
     menuName: '«Сетевой график строительства одноэтажного жилого дома»',
@@ -97,11 +110,14 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     accentColor: AppColors.palePink,
     backgroundImage: AppImages.mainPhoto,
     moduleOrientationEnum: ModuleOrientationEnum.right,
-    moduleDetailsModel: ModuleDetailsModel.appFile(appFile: '«Сетевой график строительства одноэтажного жилого дома»'),
+    moduleDetailsModel: ModuleDetailsModel.appFile(
+      appFile: '«Сетевой график строительства одноэтажного жилого дома»',
+    ),
     downloadFunction: () {},
     title: 'Проектная работа',
     projectName: '«Сетевой график строительства одноэтажного жилого дома»',
   ),
+
   ///Module 7
   ModuleModel(
     menuName: '«Этапы проектирования стартапа»',
@@ -115,6 +131,7 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     title: 'Проектная работа',
     projectName: '«Этапы проектирования стартапа»',
   ),
+
   ///Module 8
   ModuleModel(
     menuName: '«Разработка логотипа и элементов фирменного стиля для упаковки»',
@@ -123,12 +140,16 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     accentColor: AppColors.darkGreen,
     backgroundImage: AppImages.mainPhoto,
     moduleOrientationEnum: ModuleOrientationEnum.right,
-    moduleDetailsModel: ModuleDetailsModel.appFile(appFile: '«Разработка логотипа и элементов фирменного стиля для упаковки»'),
+    moduleDetailsModel: ModuleDetailsModel.appFile(
+      appFile:
+          '«Разработка логотипа и элементов фирменного стиля для упаковки»',
+    ),
     downloadFunction: () {},
     title: 'Творческая работа',
     projectName:
         '«Разработка логотипа и элементов фирменного стиля для упаковки»',
   ),
+
   ///Module 9
   ModuleModel(
     menuName: '«Этический кодекс инженера: принципы и ответственность»',
@@ -137,11 +158,14 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     accentColor: AppColors.pastelGreen,
     backgroundImage: AppImages.mainPhoto,
     moduleOrientationEnum: ModuleOrientationEnum.left,
-    moduleDetailsModel: ModuleDetailsModel.appFile(appFile: '«Этический кодекс инженера: принципы и ответственность»'),
+    moduleDetailsModel: ModuleDetailsModel.appFile(
+      appFile: '«Этический кодекс инженера: принципы и ответственность»',
+    ),
     downloadFunction: () {},
     title: 'Реферат',
     projectName: '«Этический кодекс инженера: принципы и ответственность»',
   ),
+
   ///Module 10
   ModuleModel(
     menuName: 'Описание принципов работы управляющего контроллера',
@@ -150,11 +174,14 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     accentColor: AppColors.palePink,
     backgroundImage: AppImages.mainPhoto,
     moduleOrientationEnum: ModuleOrientationEnum.right,
-    moduleDetailsModel: ModuleDetailsModel.appFile(appFile: 'Описание принципов работы управляющего контроллера'),
+    moduleDetailsModel: ModuleDetailsModel.appFile(
+      appFile: 'Описание принципов работы управляющего контроллера',
+    ),
     downloadFunction: () {},
     title: '',
     projectName: 'Описание принципов работы управляющего контроллера',
   ),
+
   ///Module 11
   ModuleModel(
     menuName:
@@ -164,12 +191,16 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     accentColor: AppColors.paleOrange,
     backgroundImage: AppImages.mainPhoto,
     moduleOrientationEnum: ModuleOrientationEnum.left,
-    moduleDetailsModel: ModuleDetailsModel.appFile(appFile: '«Описание конструкции и принципа действия электродвигателя/трансформатора»'),
+    moduleDetailsModel: ModuleDetailsModel.appFile(
+      appFile:
+          '«Описание конструкции и принципа действия электродвигателя/трансформатора»',
+    ),
     downloadFunction: () {},
     title: 'Практическая работа',
     projectName:
         '«Описание конструкции и принципа действия электродвигателя/трансформатора»',
   ),
+
   ///Module 12
   ModuleModel(
     menuName: 'Схема электрической сети',
@@ -178,11 +209,14 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     accentColor: AppColors.darkGreen,
     backgroundImage: AppImages.mainPhoto,
     moduleOrientationEnum: ModuleOrientationEnum.right,
-    moduleDetailsModel: ModuleDetailsModel.appFile(appFile: 'Схема электрической сети'),
+    moduleDetailsModel: ModuleDetailsModel.appFile(
+      appFile: 'Схема электрической сети',
+    ),
     downloadFunction: () {},
     title: '',
     projectName: 'Схема электрической сети',
   ),
+
   ///Module 13
   ModuleModel(
     menuName: '«Траектории движения на примыкании и пересечении дорог»',
@@ -191,11 +225,14 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     accentColor: AppColors.pastelGreen,
     backgroundImage: AppImages.mainPhoto,
     moduleOrientationEnum: ModuleOrientationEnum.left,
-    moduleDetailsModel: ModuleDetailsModel.appFile(appFile: '«Траектории движения на примыкании и пересечении дорог»'),
+    moduleDetailsModel: ModuleDetailsModel.appFile(
+      appFile: '«Траектории движения на примыкании и пересечении дорог»',
+    ),
     downloadFunction: () {},
     title: 'Практическая работа',
     projectName: '«Траектории движения на примыкании и пересечении дорог»',
   ),
+
   ///Module 14
   ModuleModel(
     menuName: '«Мудборд интерьера»',
@@ -204,11 +241,14 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     accentColor: AppColors.palePink,
     backgroundImage: AppImages.mainPhoto,
     moduleOrientationEnum: ModuleOrientationEnum.right,
-    moduleDetailsModel: ModuleDetailsModel.appFile(appFile: '«Мудборд интерьера»'),
+    moduleDetailsModel: ModuleDetailsModel.appFile(
+      appFile: '«Мудборд интерьера»',
+    ),
     downloadFunction: () {},
     title: 'Творческая работа',
     projectName: '«Мудборд интерьера»',
   ),
+
   ///Module 15
   ModuleModel(
     menuName: '«Коллаж праздничного пространства»',
@@ -217,7 +257,9 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     accentColor: AppColors.paleOrange,
     backgroundImage: AppImages.mainPhoto,
     moduleOrientationEnum: ModuleOrientationEnum.left,
-    moduleDetailsModel: ModuleDetailsModel.appFile(appFile: '«Коллаж праздничного пространства»'),
+    moduleDetailsModel: ModuleDetailsModel.appFile(
+      appFile: '«Коллаж праздничного пространства»',
+    ),
     downloadFunction: () {},
     title: 'Творческая работа',
     projectName: '«Коллаж праздничного пространства»',
