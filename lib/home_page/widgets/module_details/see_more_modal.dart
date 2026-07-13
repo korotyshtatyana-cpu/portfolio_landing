@@ -5,6 +5,7 @@ import '../../../models/module_details_type.dart';
 import '../../../theme/app_colors.dart';
 import '../../../theme/app_text_style.dart';
 import '../app_button.dart';
+import 'image_mode.dart';
 import 'presentation_mode.dart';
 
 class SeeMoreModal extends StatelessWidget {
@@ -60,7 +61,7 @@ class SeeMoreModal extends StatelessWidget {
                           moduleDetailsModel.presentationImages ?? <String>[],
                     )
                   : (moduleDetailsModel.image != null)
-                  ? Text('image mode')
+                  ? ImageMode(image: moduleDetailsModel.image ?? '')
                   : Text('no content'),
             ),
 

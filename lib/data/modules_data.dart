@@ -24,6 +24,7 @@ import '../theme/app_images.dart';
 ///  accentColor: AppColors.darkGreen,
 
 final List<ModuleModel> modulesData = <ModuleModel>[
+  ///About Me
   ModuleModel(
     title: '',
     projectName: '',
@@ -33,9 +34,10 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     accentColor: AppColors.pastelGreen,
     backgroundImage: AppImages.mainPhoto,
     moduleOrientationEnum: ModuleOrientationEnum.left,
-    moduleDetailsModel: ModuleDetailsModel.appFile(appFile: 'Обо мне'),
+    moduleDetailsModel: const ModuleDetailsModel.appFile(appFile: 'Обо мне'),
     downloadFunction: () {},
   ),
+  ///Module 2
   ModuleModel(
     menuName: '«Разработка простейшего роботизированного устройства»',
     backgroundColor: AppColors.pastelOrange,
@@ -45,9 +47,10 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     moduleOrientationEnum: ModuleOrientationEnum.right,
     title: 'Практическая работа',
     projectName: '«Разработка простейшего роботизированного устройства»',
-    moduleDetailsModel: ModuleDetailsModel.appFile(appFile: '«Разработка простейшего роботизированного устройства»'),
+    moduleDetailsModel: const ModuleDetailsModel.image(image: AppImages.module_2),
     downloadFunction: () {},
   ),
+  ///Module 3
   ModuleModel(
     menuName: '«Профессия инженера-конструктора vs инженера-технолога»',
     backgroundColor: AppColors.palePink,
@@ -60,6 +63,7 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     moduleDetailsModel: const ModuleDetailsModel.presentation(presentationImages: AppImages.module_3),
     downloadFunction: () {},
   ),
+  ///Module 4
   ModuleModel(
     menuName: '«Содержание деятельности инженера-энергетика»',
     backgroundColor: AppColors.pastelGreen,
@@ -72,6 +76,7 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     moduleDetailsModel: ModuleDetailsModel.appFile(appFile: '«Содержание деятельности инженера-энергетика»'),
     downloadFunction: () {},
   ),
+  ///Module 5
   ModuleModel(
     menuName: '«MagLog City»: Городская подземная маглев-логистика»',
     backgroundColor: AppColors.darkGreen,
@@ -84,6 +89,7 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     title: 'Проектная работа',
     projectName: '«MagLog City»: Городская подземная маглев-логистика»',
   ),
+  ///Module 6
   ModuleModel(
     menuName: '«Сетевой график строительства одноэтажного жилого дома»',
     backgroundColor: AppColors.pastelOrange,
@@ -96,6 +102,7 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     title: 'Проектная работа',
     projectName: '«Сетевой график строительства одноэтажного жилого дома»',
   ),
+  ///Module 7
   ModuleModel(
     menuName: '«Этапы проектирования стартапа»',
     backgroundColor: AppColors.palePink,
@@ -108,6 +115,7 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     title: 'Проектная работа',
     projectName: '«Этапы проектирования стартапа»',
   ),
+  ///Module 8
   ModuleModel(
     menuName: '«Разработка логотипа и элементов фирменного стиля для упаковки»',
     backgroundColor: AppColors.pastelGreen,
@@ -121,6 +129,7 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     projectName:
         '«Разработка логотипа и элементов фирменного стиля для упаковки»',
   ),
+  ///Module 9
   ModuleModel(
     menuName: '«Этический кодекс инженера: принципы и ответственность»',
     backgroundColor: AppColors.darkGreen,
@@ -133,6 +142,7 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     title: 'Реферат',
     projectName: '«Этический кодекс инженера: принципы и ответственность»',
   ),
+  ///Module 10
   ModuleModel(
     menuName: 'Описание принципов работы управляющего контроллера',
     backgroundColor: AppColors.pastelOrange,
@@ -145,6 +155,7 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     title: '',
     projectName: 'Описание принципов работы управляющего контроллера',
   ),
+  ///Module 11
   ModuleModel(
     menuName:
         '«Описание конструкции и принципа действия электродвигателя/трансформатора»',
@@ -159,6 +170,7 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     projectName:
         '«Описание конструкции и принципа действия электродвигателя/трансформатора»',
   ),
+  ///Module 12
   ModuleModel(
     menuName: 'Схема электрической сети',
     backgroundColor: AppColors.pastelGreen,
@@ -171,6 +183,7 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     title: '',
     projectName: 'Схема электрической сети',
   ),
+  ///Module 13
   ModuleModel(
     menuName: '«Траектории движения на примыкании и пересечении дорог»',
     backgroundColor: AppColors.darkGreen,
@@ -183,6 +196,7 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     title: 'Практическая работа',
     projectName: '«Траектории движения на примыкании и пересечении дорог»',
   ),
+  ///Module 14
   ModuleModel(
     menuName: '«Мудборд интерьера»',
     backgroundColor: AppColors.pastelOrange,
@@ -195,6 +209,7 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     title: 'Творческая работа',
     projectName: '«Мудборд интерьера»',
   ),
+  ///Module 15
   ModuleModel(
     menuName: '«Коллаж праздничного пространства»',
     backgroundColor: AppColors.palePink,
