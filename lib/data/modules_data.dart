@@ -110,8 +110,8 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     accentColor: AppColors.palePink,
     backgroundImage: AppImages.mainPhoto,
     moduleOrientationEnum: ModuleOrientationEnum.right,
-    moduleDetailsModel: ModuleDetailsModel.appFile(
-      appFile: '«Сетевой график строительства одноэтажного жилого дома»',
+    moduleDetailsModel: const ModuleDetailsModel.appFile(
+      appFile: AppFiles.module_6,
     ),
     downloadFunction: () {},
     title: 'Проектная работа',
