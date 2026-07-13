@@ -4,6 +4,7 @@ import '../data/constants.dart';
 import '../data/modules_data.dart';
 import '../models/module_model.dart';
 import '../theme/app_colors.dart';
+import 'widgets/custom_drawer_menu.dart';
 import 'widgets/module_content.dart';
 import 'widgets/module_layout.dart';
 import 'widgets/welcome_module.dart';
@@ -78,7 +79,7 @@ class _HomePageContentState extends State<HomePageContent>
           setState(() {});
         });
 
-    _slideAnimation = Tween<double>(begin: -245, end: 0).animate(
+    _slideAnimation = Tween<double>(begin: -250, end: 0).animate(
       CurvedAnimation(parent: _animationController, curve: Curves.easeOut),
     );
 
@@ -95,10 +96,8 @@ class _HomePageContentState extends State<HomePageContent>
 
   @override
   Widget build(BuildContext context) {
-    final Color currentColor = modulesData[_currentModuleIndex].backgroundColor;
-    final double slideOffset = _slideAnimation.value;
-
     return Scaffold(
+      backgroundColor: AppColors.primaryColor,
       body: Stack(
         children: <Widget>[
           ListView(
@@ -139,91 +138,14 @@ class _HomePageContentState extends State<HomePageContent>
               ),
             ),
 
-          Transform.translate(
-            offset: Offset(slideOffset, 0),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                Container(
-                  width: 250,
-                  height: double.infinity,
-                  color: Colors.white,
-                  child: Column(
-                    children: <Widget>[
-                      const SizedBox(height: 16),
-                      Expanded(
-                        child: ListView.builder(
-                          padding: const EdgeInsets.symmetric(horizontal: 16),
-                          itemCount: modulesData.length,
-                          itemBuilder: (BuildContext context, int index) {
-                            final ModuleModel model = modulesData[index];
-                            final bool isCurrent = _currentModuleIndex == index;
-                            final Color color = model.backgroundColor;
-
-                            return GestureDetector(
-                              onTap: () => _scrollToModule(index),
-                              child: Container(
-                                margin: const EdgeInsets.only(bottom: 4),
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 16,
-                                  vertical: 12,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: isCurrent
-                                      ? color.withValues(alpha: 0.15)
-                                      : Colors.transparent,
-                                  borderRadius: BorderRadius.circular(12),
-                                ),
-                                child: Row(
-                                  children: <Widget>[
-                                    Expanded(
-                                      child: Text(
-                                        model.menuName,
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w300,
-                                          color: AppColors.middleDartText,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            );
-                          },
-                        ),
-                      ),
-                      const SizedBox(height: 16),
-                    ],
-                  ),
-                ),
-
-                GestureDetector(
-                  onTap: _toggleMenu,
-                  child: Container(
-                    width: 40,
-                    height: 80,
-                    decoration: const BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(40),
-                        bottomRight: Radius.circular(40),
-                      ),
-                    ),
-                    child: Center(
-                      child: Padding(
-                        padding: const EdgeInsets.only(right: 7),
-                        child: Icon(
-                          _isMenuOpen ? Icons.close : Icons.menu,
-                          color: currentColor,
-                          size: 28,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+          CustomDrawerMenu(
+            modulesData: modulesData,
+            currentIndex: _currentModuleIndex,
+            onItemTap: _scrollToModule,
+            toggleMenu: _toggleMenu,
+            isOpen: _isMenuOpen,
+            slideOffset: _slideAnimation.value,
+            currentColor: modulesData[_currentModuleIndex].backgroundColor,
           ),
         ],
       ),

@@ -63,7 +63,6 @@ class ModuleContent extends StatelessWidget {
                 }
               },
             ),
-            // const SizedBox(width: 64),
             AppButton(
               text: 'Скачать',
               color: accentColor,

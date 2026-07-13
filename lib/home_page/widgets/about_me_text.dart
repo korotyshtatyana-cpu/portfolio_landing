@@ -1,34 +1,37 @@
 import 'package:flutter/material.dart';
+import '../../theme/adaptive_service.dart';
 import '../../theme/app_text_style.dart';
 
 class AboutMe extends StatelessWidget {
   final Color baseColor;
   final Color highlightColor;
+  final ScreenResolution screenResolution;
 
   const AboutMe({
     super.key,
     required this.baseColor,
+    required this.screenResolution,
     required this.highlightColor,
   });
 
   @override
   Widget build(BuildContext context) {
-    final double screenWidth = MediaQuery.of(context).size.width;
-
     double baseSize;
-    if (screenWidth < 600) {
-      baseSize = 14;
-    } else if (screenWidth < 900) {
-      baseSize = 16;
-    } else if (screenWidth < 1200) {
-      baseSize = 18;
-    } else {
-      baseSize = 18;
+    switch (screenResolution) {
+      case ScreenResolution.mobile:
+        baseSize = 14;
+      case ScreenResolution.tablet:
+        baseSize = 16;
+      case ScreenResolution.desktop:
+        baseSize = 18;
     }
 
     final double highlightedSize = baseSize * 1.4;
 
     return RichText(
+      textAlign: screenResolution == ScreenResolution.desktop
+          ? TextAlign.left
+          : TextAlign.center,
       text: TextSpan(
         style: AppTextStyle.basic.copyWith(
           color: baseColor,

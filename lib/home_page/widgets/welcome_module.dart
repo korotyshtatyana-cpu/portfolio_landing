@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 import '../../data/constants.dart';
+import '../../theme/adaptive_service.dart';
 import '../../theme/app_text_style.dart';
 import 'about_me_text.dart';
 
@@ -23,21 +24,27 @@ class WelcomeModule extends StatelessWidget {
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
 
+    final ScreenResolution screenResolution =
+        AdaptiveService.getScreenResolution(context);
+
     return SizedBox(
       height: moduleHeight,
       child: Container(
         decoration: BoxDecoration(
           color: backgroundColor,
-          image: DecorationImage(
-            image: AssetImage(backgroundImage),
-            fit: BoxFit.fitHeight,
-            alignment: AlignmentDirectional.centerStart,
-          ),
+          image: screenResolution == ScreenResolution.desktop
+              ? DecorationImage(
+                  image: AssetImage(backgroundImage),
+                  fit: BoxFit.fitHeight,
+                  alignment: AlignmentDirectional.centerStart,
+                )
+              : null,
         ),
         child: Padding(
           padding: const EdgeInsets.only(top: 32),
           child: Column(
             children: <Widget>[
+              const Spacer(),
               Row(
                 children: <Widget>[
                   SizedBox(width: screenWidth * 0.07),
@@ -96,9 +103,12 @@ class WelcomeModule extends StatelessWidget {
               const Spacer(),
               Row(
                 children: <Widget>[
-                  SizedBox(width: screenWidth * 0.4),
+                  screenResolution == ScreenResolution.desktop
+                      ? SizedBox(width: screenWidth * 0.4)
+                      : SizedBox(width: screenWidth * 0.1),
                   Expanded(
                     child: AboutMe(
+                      screenResolution: screenResolution,
                       baseColor: textColor,
                       highlightColor: accentColor,
                     ),
