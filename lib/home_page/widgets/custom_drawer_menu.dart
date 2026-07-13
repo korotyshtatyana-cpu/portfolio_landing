@@ -43,7 +43,6 @@ class CustomDrawerMenu extends StatelessWidget {
                     itemBuilder: (BuildContext context, int index) {
                       final ModuleModel model = modulesData[index];
                       final bool isCurrent = currentIndex == index;
-                      final Color color = model.backgroundColor;
 
                       return GestureDetector(
                         onTap: () => onItemTap(index),
