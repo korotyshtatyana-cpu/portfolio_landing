@@ -94,8 +94,8 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     accentColor: AppColors.pastelGreen,
     backgroundImage: AppImages.mainPhoto,
     moduleOrientationEnum: ModuleOrientationEnum.left,
-    moduleDetailsModel: ModuleDetailsModel.appFile(
-      appFile: '«MagLog City»: Городская подземная маглев-логистика»',
+    moduleDetailsModel: const ModuleDetailsModel.appFile(
+      appFile: AppFiles.module_5,
     ),
     downloadFunction: () {},
     title: 'Проектная работа',
@@ -263,5 +263,50 @@ final List<ModuleModel> modulesData = <ModuleModel>[
     downloadFunction: () {},
     title: 'Творческая работа',
     projectName: '«Коллаж праздничного пространства»',
+  ),
+
+  ///Module 16
+  ModuleModel(
+    menuName:
+        'Бизнес-план инновационного проекта (текстовый редактор + таблицы)',
+    backgroundColor: AppColors.pastelGreen,
+    textColor: AppColors.middleDartText,
+    accentColor: AppColors.darkGreen,
+    backgroundImage: AppImages.mainPhoto,
+    moduleOrientationEnum: ModuleOrientationEnum.right,
+    moduleDetailsModel: ModuleDetailsModel.appFile(appFile: ''),
+    downloadFunction: () {},
+    title: 'Бизнес-план ',
+    projectName: 'Бизнес-план инновационного проекта',
+  ),
+
+  ///Module 16
+  ModuleModel(
+    menuName:
+        'Исследовательская работа «Идентификация и фальсификация продовольственных продуктов» (теоретический анализ)',
+    backgroundColor: AppColors.darkGreen,
+    textColor: AppColors.lightText,
+    accentColor: AppColors.pastelGreen,
+    backgroundImage: AppImages.mainPhoto,
+    moduleOrientationEnum: ModuleOrientationEnum.left,
+    moduleDetailsModel: const ModuleDetailsModel.appFile(appFile: ''),
+    downloadFunction: () {},
+    title: 'Исследовательская работа',
+    projectName: '«Идентификация и фальсификация продовольственных продуктов»',
+  ),
+
+  ///Module 17
+  ModuleModel(
+    menuName:
+        'Практическая работа «Схема взлётно-посадочной полосы» (рисунок с пояснениями)',
+    backgroundColor: AppColors.pastelOrange,
+    textColor: AppColors.middleDartText,
+    accentColor: AppColors.palePink,
+    backgroundImage: AppImages.mainPhoto,
+    moduleOrientationEnum: ModuleOrientationEnum.right,
+    moduleDetailsModel: const ModuleDetailsModel.appFile(appFile: ''),
+    downloadFunction: () {},
+    title: 'Практическая работа',
+    projectName: '«Схема взлётно-посадочной полосы»',
   ),
 ];
